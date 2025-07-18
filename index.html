@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rutina Saiyajin 🥊</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="nav-logo bangers-regular">Saiyajin 🐉</div>
+        <input type="checkbox" id="toggle-menu" />
+        <label for="toggle-menu" class="menu-icon">☰</label>
+        <ul class="nav-links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="calendar.html">Calendario</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+      <h1>🔥 Rutina de Entrenamiento Saiyajin 🔥</h1>
+      <p>Subí tu rutina y entrená como Goku 🐉</p>
+    </header>
+
+    <main>
+      <div class="box" style="display: flex; flex-direction: row; gap: 5px; justify-content: center; align-items: center;">
+        <div class="custom-upload">
+          <input type="file" id="csvFile" accept=".csv" hidden />
+          <button id="selectFileBtn">Seleccionar CSV</button>
+          <span id="fileName">Ningún archivo seleccionado</span>
+        </div>
+        <button id="loadBtn">Cargar Rutina</button>
+      </div>
+
+      <div class="power-level">
+        <label>Nivel de poder:</label>
+        <div class="progress">
+          <div id="powerBar"></div>
+        </div>
+        <span id="powerValue">0</span>
+      </div>
+
+      <section id="routine"></section>
+    </main>
+
+    <footer>
+      <p>Desarrollado al estilo Dragon Ball por un guerrero Z 💥</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>

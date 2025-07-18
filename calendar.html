@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calendario Saiyajin 📅</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <style>
+      .calendar {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 10px;
+        margin: 2rem auto;
+        max-width: 600px;
+      }
+      .day {
+        padding: 10px;
+        border-radius: 10px;
+        font-weight: bold;
+        box-shadow: 0 0 8px black;
+      }
+      .complete {
+        background-color: #22bb33;
+        color: white;
+      }
+      .incomplete {
+        background-color: #cc3333;
+        color: white;
+      }
+      .empty {
+        background-color: #666;
+        color: #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="nav-logo">Saiyajin 🐉</div>
+        <input type="checkbox" id="toggle-menu" />
+        <label for="toggle-menu" class="menu-icon">☰</label>
+        <ul class="nav-links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="calendar.html">Calendario</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+      <h1>📆 Calendario Saiyajin</h1>
+      <p>Revisá si entrenaste como un verdadero guerrero Z</p>
+    </header>
+
+    <main>
+      <div id="calendar" class="calendar"></div>
+    </main>
+
+    <footer>
+      <p>Volvé mañana a romper tus límites 💪</p>
+    </footer>
+
+    <script src="js/calendar.js"></script>
+  </body>
+</html>
