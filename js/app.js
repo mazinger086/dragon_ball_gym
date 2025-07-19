@@ -62,7 +62,13 @@ reader.onload = function (e) {
 reader.readAsText(file);
 });
 
-
+function normalizeText(texto) {
+  return texto
+    .normalize("NFD") // descompone letras con tildes
+    .replace(/[\u0300-\u036f]/g, "") // remueve los signos diacríticos
+    .toLowerCase()
+    .trim();
+}
 
 
 function parseCSV(data) {
@@ -83,7 +89,7 @@ function parseCSV(data) {
 
     const rutina = Object.fromEntries(headers.map((h, j) => [h.trim(), values[j].trim()]));
 
-    if (rutina['Día'].toLowerCase() === diaActual.toLowerCase()) {
+    if (normalizeText(rutina['Día']) === normalizeText(diaActual)) {
       ejerciciosHoy.push(rutina);
     }
   }
