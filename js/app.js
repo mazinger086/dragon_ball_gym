@@ -1,3 +1,23 @@
+// En tu app.js o dentro de <script> al final del HTML
+    const toggle = document.getElementById("toggle-menu");
+    const heading = document.querySelector("header h1");
+
+    toggle.addEventListener("change", () => {
+    console.log(heading);
+    
+    if (toggle.checked) {
+        heading.classList.add("menu-open");
+        console.log('abierto');
+        
+    } else {
+        heading.classList.remove("menu-open");
+        console.log('cerrado');
+        
+    }
+    });
+
+
+
 document.getElementById('selectFileBtn').addEventListener('click', function () {
   document.getElementById('csvFile').click();
 });

@@ -39,7 +39,7 @@ img {
   display: block;
 }
 
-body {
+body { 
   background: linear-gradient(#0d0d0d, #1a1a1a);
   color: #f5f5f5;
   font-family: var(--secondaryFont);
@@ -49,6 +49,15 @@ body {
   background: linear-gradient(var(--color-bg1), var(--color-bg2));
   min-height: 100vh;
   overflow-x: hidden;
+}
+
+@media (max-width:768px){
+    body {
+         display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 h1, h2, h3 {
@@ -92,7 +101,7 @@ button#selectFileBtn {
 
 @media (max-width:768px){
     #selectFileBtn {
-        padding: 3px;
+        padding: 10px;
     }
 }
 
@@ -258,6 +267,10 @@ h1 {
 
   .menu-icon {
     display: block;    
+  }
+
+  header h1.menu-open {
+  margin-top: 11rem;
   }
 }
 
