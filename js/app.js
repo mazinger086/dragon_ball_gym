@@ -54,7 +54,7 @@ reader.onload = function (e) {
     Swal.fire({
       icon: 'error',
       title: 'Oops...',
-      text: 'Hubo un error al cargar la rutina. Verificá el archivo CSV.',
+      text: error,
     });
   }
 };
