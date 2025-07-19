@@ -3,8 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contacto 📨</title>
-  <link rel="stylesheet" href="css/styles.css"/>
+  <title>Guerrero Z 🐉</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bangers&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
   <style>
     form {
       display: flex;
@@ -12,10 +22,10 @@
       gap: 1rem;
       max-width: 600px;
       margin: 2rem auto;
-      padding: 2rem;
-      background-color: rgba(255,255,255,0.05);
+      padding: 1rem;
+      background-color: #004aa8;
       border-radius: 10px;
-      box-shadow: 0 0 10px orange;
+      
     }
     input, textarea {
       padding: 10px;
@@ -27,11 +37,15 @@
     textarea {
       resize: vertical;
     }
+    .msj {
+      background-color: orange;
+      color: black;
+    }
   </style>
 </head>
 <body>
   <nav class="navbar">
-    <div class="nav-logo">Saiyajin 🐉</div>
+    <div class="nav-logo">Guerrero Z 🐉</div>
     <input type="checkbox" id="toggle-menu">
     <label for="toggle-menu" class="menu-icon">☰</label>
     <ul class="nav-links">
@@ -52,12 +66,13 @@
       <input type="text" name="nombre" placeholder="Tu nombre" required />
       <input type="email" name="email" placeholder="Tu email" required />
       <textarea name="mensaje" rows="5" placeholder="Escribí tu mensaje..." required></textarea>
-      <button type="submit">Enviar mensaje</button>
+      <button type="submit" class="msj">Enviar mensaje</button>
     </form>
   </main>
 
   <footer>
     <p>Tu mensaje es importante para nosotros 🧡</p>
   </footer>
+  <script src="js/menuToggle.js"></script>
 </body>
 </html>
