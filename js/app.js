@@ -34,17 +34,32 @@ document.getElementById('loadBtn').addEventListener('click', function () {
   const file = fileInput.files[0];
 
   if (!file) {
-    alert('Por favor seleccioná un archivo CSV primero.');
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Por favor seleccioná un archivo CSV primero.',
+    });
     return;
   }
 
-  const reader = new FileReader();
-  reader.onload = function (e) {
+const reader = new FileReader();
+
+reader.onload = function (e) {
+  try {
     const text = e.target.result;
-    localStorage.setItem('rutina_csv', text); // ✅ Guardamos el CSV como texto
+    localStorage.setItem('rutina_csv', text);
     parseCSV(text);
-  };
-  reader.readAsText(file);
+  } catch (error) {
+    console.error("Error al cargar la rutina:", error);
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Hubo un error al cargar la rutina. Verificá el archivo CSV.',
+    });
+  }
+};
+
+reader.readAsText(file);
 });
 
 
