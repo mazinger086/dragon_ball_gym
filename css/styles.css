@@ -23,11 +23,14 @@
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
-html, body {
+html,
+body {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
@@ -39,7 +42,7 @@ img {
   display: block;
 }
 
-body { 
+body {
   background: linear-gradient(#0d0d0d, #1a1a1a);
   color: #f5f5f5;
   font-family: var(--secondaryFont);
@@ -51,16 +54,11 @@ body {
   overflow-x: hidden;
 }
 
-@media (max-width:768px){
-    body {
-         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-}
 
-h1, h2, h3 {
+
+h1,
+h2,
+h3 {
   font-family: var(--font-title);
   letter-spacing: 2px;
   margin: 0 0 0.5rem;
@@ -69,7 +67,7 @@ h1, h2, h3 {
 
 header h1 {
   font-size: 2.5rem;
-  margin: 1rem;  
+  margin: 6rem auto 3rem auto;
 }
 
 input[type="file"]::file-selector-button {
@@ -90,34 +88,33 @@ button {
   font-weight: bold;
   cursor: pointer;
   margin: 1rem;
-  border-radius: 10px;  
+  border-radius: 10px;
 }
 
 button#selectFileBtn {
-    margin: 0;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
+  margin: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
-@media (max-width:768px){
-    #selectFileBtn {
-        padding: 10px;
-    }
+@media (max-width: 768px) {
+  #selectFileBtn {
+    padding: 10px;
+  }
 }
-
 
 .custom-upload {
-    background: #fff;
-    color: #000;
-    padding: 0 5px 0 0;
-    height: 36px;    
-    display: flex; 
-    align-items: center;
-    border-radius: 10px;
+  background: #fff;
+  color: #000;
+  padding: 0 5px 0 0;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
 }
 
 #fileName {
-    padding: 0 20px;
+  padding: 0 20px;
 }
 
 .power-level {
@@ -125,39 +122,35 @@ button#selectFileBtn {
   width: 70%;
 }
 
-
 .box {
-    display: flex; 
-    flex-direction: row; 
-    gap: 5px; 
-    justify-content: center; 
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
 }
 
-@media (max-width:768px){
-    .box {
-        flex-direction: column;
-        margin: 20px;
-    }
+@media (max-width: 768px) {
+  .box {
+    flex-direction: column;
+    margin: 20px;
+  }
 }
-
-
 
 .routine-card {
   background: rgba(255, 255, 255, 0.1);
-  margin: 1rem auto;  
+  margin: 1rem auto;
   border-radius: 10px;
   width: 90%;
   max-width: 600px;
   border: 2px solid black;
   overflow: hidden;
-  
 }
 
 .routine-card h3 {
-    padding: 10px;
-    background-color: #004aa8;
-    color: #ffffff;    
+  padding: 10px;
+  background-color: #004aa8;
+  color: #ffffff;
 }
 
 .complete-btn {
@@ -169,7 +162,7 @@ button#selectFileBtn {
   color: white;
   font-weight: bold;
   cursor: default;
-  transition: 0.3s;  
+  transition: 0.3s;
 }
 
 .incomplete-btn {
@@ -181,7 +174,7 @@ button#selectFileBtn {
   color: white;
   font-weight: bold;
   cursor: pointer;
-  transition: 0.3s;  
+  transition: 0.3s;
 }
 
 /* MENU */
@@ -189,6 +182,7 @@ button#selectFileBtn {
 /* NAVBAR */
 
 .navbar {
+  position: fixed;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -198,14 +192,13 @@ button#selectFileBtn {
   font-family: var(--primaryFont);
   letter-spacing: 2px;
   box-shadow: 0 0 10px gold;
-  position: sticky;
   top: 0;
   z-index: 1000;
 }
 
 h1 {
-    font-family: var(--primaryFont);
-    letter-spacing: 5px;
+  font-family: var(--primaryFont);
+  letter-spacing: 5px;
 }
 
 .nav-logo {
@@ -227,12 +220,21 @@ h1 {
   text-decoration: none;
   font-weight: bold;
   padding: 8px 12px;
-  transition: background 0.3s;
+  /* transition: background 0.3s; */
 }
 
 .nav-links li a:hover {
   background: #ff9900;
   border-radius: 8px;
+  padding: 10px;
+}
+
+@media (max-width:768px){
+    .nav-links li a:hover {
+    background: #ff9900;
+    border-radius: 8px;
+    padding: 10px;
+  }
 }
 
 .menu-icon {
@@ -255,8 +257,7 @@ h1 {
     background-color: #222;
     flex-direction: column;
     width: 100%;
-    display: none;
-    border-radius: 0 0 10px 10px;
+    display: none;    
     padding: 20px 10px;
     /* box-shadow: 0 8px 10px black; */
   }
@@ -266,11 +267,11 @@ h1 {
   }
 
   .menu-icon {
-    display: block;    
+    display: block;
   }
 
   header h1.menu-open {
-  margin-top: 11rem;
+    margin-top: 16rem;
   }
 }
 
@@ -285,43 +286,48 @@ h1 {
   /* overflow: hidden; */
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 #powerBar {
   background: linear-gradient(
-  to top,
-  gold 0%,
-  gold 49%,
-  red 50%,    /* línea roja */
-  green 70%,
-  green 100%
-);
+    to top,
+    gold 0%,
+    gold 49%,
+    red 50%,
+    /* línea roja */ green 70%,
+    green 100%
+  );
   height: 100%;
   width: 0%;
   transition: width 1s ease-in-out;
 }
 
 #shenlongHead {
-    position: absolute;
-    top: -44px;
-    left: -99px;    
-    height: 100px;
-    transition: left 1s ease-in-out;
-    z-index: 10;
+  position: absolute;
+  top: -44px;
+  left: -99px;
+  height: 100px;
+  transition: left 1s ease-in-out;
+  z-index: 10;
 }
 
 #shenlongTail {
-    position: absolute;
-    top: -16px;
-    left: -48px;    
-    height: 100px;
-    transition: left 1s ease-in-out;
-    z-index: 10;
+  position: absolute;
+  top: -16px;
+  left: -48px;
+  height: 100px;
+  transition: left 1s ease-in-out;
+  z-index: 10;
 }
 
 .power-level {
-    display: flex;
-    flex-direction: column;   
-    justify-content: center;
-    gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
 }
-
-

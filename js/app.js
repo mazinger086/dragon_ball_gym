@@ -18,8 +18,9 @@
 
 
 
-document.getElementById('selectFileBtn').addEventListener('click', function () {
-  document.getElementById('csvFile').click();
+document.getElementById('selectFileBtn').addEventListener('click', function (e) {
+  document.getElementById('csvFile').click();  
+  
 });
 
 document.getElementById('csvFile').addEventListener('change', function () {

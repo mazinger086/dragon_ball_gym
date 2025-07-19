@@ -1,0 +1,128 @@
+[
+  {
+    "Día": "Lunes",
+    "Ejercicio": "Sentadilla",
+    "Series": 4,
+    "Repeticiones": "10",
+    "Peso": "100"
+  },
+  {
+    "Día": "Lunes",
+    "Ejercicio": "Press Banca",
+    "Series": 3,
+    "Repeticiones": "8",
+    "Peso": "80"
+  },
+  {
+    "Día": "Lunes",
+    "Ejercicio": "Curl Bíceps",
+    "Series": 3,
+    "Repeticiones": "12",
+    "Peso": "12"
+  },
+  {
+    "Día": "Martes",
+    "Ejercicio": "Dominadas",
+    "Series": 4,
+    "Repeticiones": "12",
+    "Peso": "Bodyweight"
+  },
+  {
+    "Día": "Martes",
+    "Ejercicio": "Remo con barra",
+    "Series": 4,
+    "Repeticiones": "10",
+    "Peso": "60"
+  },
+  {
+    "Día": "Martes",
+    "Ejercicio": "Face Pull",
+    "Series": 3,
+    "Repeticiones": "15",
+    "Peso": "10"
+  },
+  {
+    "Día": "Miércoles",
+    "Ejercicio": "Press Militar",
+    "Series": 4,
+    "Repeticiones": "8",
+    "Peso": "40"
+  },
+  {
+    "Día": "Miércoles",
+    "Ejercicio": "Elevaciones Laterales",
+    "Series": 3,
+    "Repeticiones": "12",
+    "Peso": "8"
+  },
+  {
+    "Día": "Miércoles",
+    "Ejercicio": "Flexiones",
+    "Series": 3,
+    "Repeticiones": "15",
+    "Peso": "Bodyweight"
+  },
+  {
+    "Día": "Jueves",
+    "Ejercicio": "Peso Muerto",
+    "Series": 4,
+    "Repeticiones": "6",
+    "Peso": "110"
+  },
+  {
+    "Día": "Jueves",
+    "Ejercicio": "Remo con mancuernas",
+    "Series": 3,
+    "Repeticiones": "10",
+    "Peso": "30"
+  },
+  {
+    "Día": "Jueves",
+    "Ejercicio": "Planchas",
+    "Series": 3,
+    "Repeticiones": "60s",
+    "Peso": "Bodyweight"
+  },
+  {
+    "Día": "Viernes",
+    "Ejercicio": "Zancadas",
+    "Series": 4,
+    "Repeticiones": "12",
+    "Peso": "Bodyweight"
+  },
+  {
+    "Día": "Viernes",
+    "Ejercicio": "Fondos en paralelas",
+    "Series": 3,
+    "Repeticiones": "10",
+    "Peso": "Bodyweight"
+  },
+  {
+    "Día": "Viernes",
+    "Ejercicio": "Abdominales",
+    "Series": 4,
+    "Repeticiones": "20",
+    "Peso": "Bodyweight"
+  },
+  {
+    "Día": "Sábado",
+    "Ejercicio": "HIIT (cinta)",
+    "Series": 5,
+    "Repeticiones": "30s on / 30s off",
+    "Peso": "Bodyweight"
+  },
+  {
+    "Día": "Sábado",
+    "Ejercicio": "Burpees",
+    "Series": 4,
+    "Repeticiones": "15",
+    "Peso": "Bodyweight"
+  },
+  {
+    "Día": "Sábado",
+    "Ejercicio": "Estiramiento completo",
+    "Series": 3,
+    "Repeticiones": "60s",
+    "Peso": "Bodyweight"
+  }
+]
