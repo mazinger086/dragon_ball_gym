@@ -1,7 +1,21 @@
 :root {
-    --primaryFont: "Bangers", system-ui;
-}
+  --primaryFont: "Bangers", system-ui;
+  --secondaryFont: "Inter", "Poppins", system-ui, sans-serif;
 
+  --color-bg1: #f9821d;
+  --color-bg2: #f06d00;
+  --color-blue: #004aa8;
+  --color-blue-fill: #005ac9;
+  --color-cream: #ffe7bf;
+  --color-cream-alt: #ffd18a;
+  --color-border: #131313;
+  --color-text-dark: #131313;
+  --color-text-light: #ffffff;
+
+  --radius-pill: 999px;
+  --radius-box: 14px;
+  --transition: 0.4s ease;
+}
 body {
   background: linear-gradient(#0d0d0d, #1a1a1a);
   color: #f5f5f5;
@@ -64,20 +78,7 @@ button#selectFileBtn {
   width: 80%;
 }
 
-.progress {
-  background: #333;
-  border-radius: 10px;
-  height: 20px;
-  margin: 0.5rem 0;
-  overflow: hidden;
-}
 
-#powerBar {
-  background: linear-gradient(to right, red, yellow);
-  height: 100%;
-  width: 0%;
-  transition: width 1s ease-in-out;
-}
 
 
 .routine-card {
@@ -200,4 +201,51 @@ h1 {
   }
 }
 
+/* test */
 
+.progress {
+  position: relative;
+  background: #333;
+  border-radius: 10px;
+  height: 14px;
+  margin: 0.5rem 0;
+  /* overflow: hidden; */
+}
+
+#powerBar {
+  background: linear-gradient(
+  to top,
+  gold 0%,
+  gold 49%,
+  red 50%,    /* línea roja */
+  green 70%,
+  green 100%
+);
+  height: 100%;
+  width: 0%;
+  transition: width 1s ease-in-out;
+}
+
+#shenlongHead {
+    position: absolute;
+    top: -44px;
+    left: -99px;    
+    height: 100px;
+    transition: left 1s ease-in-out;
+    z-index: 10;
+}
+
+#shenlongTail {
+    position: absolute;
+    top: -16px;
+    left: -48px;    
+    height: 100px;
+    transition: left 1s ease-in-out;
+    z-index: 10;
+}
+
+.power-level {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}

@@ -1,0 +1,138 @@
+:root {
+  --font-title: "Bangers", system-ui;
+  --font-body: "Inter", "Poppins", system-ui, sans-serif;
+
+  --color-bg1: #f9821d;
+  --color-bg2: #f06d00;
+  --color-blue: #004aa8;
+  --color-blue-fill: #005ac9;
+  --color-cream: #ffe7bf;
+  --color-cream-alt: #ffd18a;
+  --color-border: #131313;
+  --color-text-dark: #131313;
+  --color-text-light: #ffffff;
+
+  --radius-pill: 999px;
+  --radius-box: 14px;
+  --transition: 0.4s ease;
+}
+
+/* ===================== Global ===================== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--color-text-dark);
+  background: linear-gradient(var(--color-bg1), var(--color-bg2));
+  min-height: 100vh;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-title);
+  letter-spacing: 2px;
+  margin: 0 0 0.5rem;
+}
+
+/* ===================== Barra de Progreso ===================== */
+.progress {
+  width: 100%;
+  max-width: 450px;
+  height: 40px;
+  background: var(--color-cream);
+  border: 3px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 4px 0 rgba(0,0,0,.15);
+  margin: 1.5rem auto;
+}
+
+#powerBar {
+  height: 100%;
+  width: 0%;
+  background: var(--color-blue-fill);
+  border-radius: var(--radius-pill);
+  transition: width var(--transition);
+}
+
+#powerValue {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-title);
+  font-size: 1.2rem;
+  color: var(--color-text-light);
+  text-shadow: 0 2px 0 rgba(0,0,0,.2);
+}
+
+/* ===================== Tarjetas de Rutina ===================== */
+.routine-card {
+  background: var(--color-cream);
+  color: var(--color-text-dark);
+  border: 2px solid var(--color-border);
+  border-radius: 14px;
+  padding: 1rem 1.2rem;
+  max-width: 600px;
+  margin: 0 auto 1rem;
+  box-shadow: 0 4px 0 rgba(0,0,0,.18);
+}
+
+.routine-card h3 {
+  font-family: var(--font-title);
+  font-size: 1.3rem;
+  color: var(--color-blue);
+  margin: 0 0 0.5rem;
+}
+
+.routine-card p {
+  margin: 0.3rem 0;
+  font-size: 0.9rem;
+}
+
+/* ===================== Botones ===================== */
+button,
+.incomplete-btn,
+.complete-btn {
+  border: none;
+  padding: 0.5rem 1rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.incomplete-btn {
+  background: #c9322b;
+  color: #fff;
+}
+
+.incomplete-btn:hover {
+  background: #a3221e;
+}
+
+.complete-btn {
+  background: #1d9b35;
+  color: #fff;
+  cursor: default;
+}
+
+/* ===================== Responsive ===================== */
+@media (max-width: 600px) {
+  .progress {
+    height: 36px;
+  }
+
+  #powerValue {
+    font-size: 1rem;
+  }
+
+  .routine-card {
+    padding: 0.8rem 1rem;
+  }
+}
