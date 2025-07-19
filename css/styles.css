@@ -16,24 +16,55 @@
   --radius-box: 14px;
   --transition: 0.4s ease;
 }
+
+/* ============ GLOBALES ======================= */
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html, body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 body {
   background: linear-gradient(#0d0d0d, #1a1a1a);
   color: #f5f5f5;
-  font-family: 'Orbitron', sans-serif;
+  font-family: var(--secondaryFont);
   text-align: center;
+  margin: 0;
+  color: var(--color-text-dark);
+  background: linear-gradient(var(--color-bg1), var(--color-bg2));
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
-
+h1, h2, h3 {
+  font-family: var(--font-title);
+  letter-spacing: 2px;
+  margin: 0 0 0.5rem;
+  color: var(--color-blue);
+}
 
 header h1 {
-  color: orange;
   font-size: 2.5rem;
-  margin: 1rem;
-  text-shadow: 0 0 5px red, 0 0 15px yellow;
+  margin: 1rem;  
 }
 
 input[type="file"]::file-selector-button {
-  background: #ff9900;
+  background: var(--color-blue);
   color: white;
   border: none;
   padding: 8px 16px;
@@ -44,14 +75,13 @@ input[type="file"]::file-selector-button {
 
 button {
   padding: 10px 20px;
-  background-color: #ff9900;
+  background-color: var(--color-blue);
   border: none;
   color: white;
   font-weight: bold;
   cursor: pointer;
   margin: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 0 10px gold;
+  border-radius: 10px;  
 }
 
 button#selectFileBtn {
@@ -59,6 +89,14 @@ button#selectFileBtn {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 }
+
+@media (max-width:768px){
+    #selectFileBtn {
+        padding: 3px;
+    }
+}
+
+
 .custom-upload {
     background: #fff;
     color: #000;
@@ -75,20 +113,42 @@ button#selectFileBtn {
 
 .power-level {
   margin: 1rem auto;
-  width: 80%;
+  width: 70%;
 }
 
+
+.box {
+    display: flex; 
+    flex-direction: row; 
+    gap: 5px; 
+    justify-content: center; 
+    align-items: center;
+}
+
+@media (max-width:768px){
+    .box {
+        flex-direction: column;
+        margin: 20px;
+    }
+}
 
 
 
 .routine-card {
   background: rgba(255, 255, 255, 0.1);
-  margin: 1rem auto;
-  padding: 1rem;
+  margin: 1rem auto;  
   border-radius: 10px;
   width: 90%;
   max-width: 600px;
-  box-shadow: 0 0 10px orange;
+  border: 2px solid black;
+  overflow: hidden;
+  
+}
+
+.routine-card h3 {
+    padding: 10px;
+    background-color: #004aa8;
+    color: #ffffff;    
 }
 
 .complete-btn {
@@ -100,8 +160,7 @@ button#selectFileBtn {
   color: white;
   font-weight: bold;
   cursor: default;
-  transition: 0.3s;
-  box-shadow: 0 0 10px limegreen;
+  transition: 0.3s;  
 }
 
 .incomplete-btn {
@@ -113,17 +172,18 @@ button#selectFileBtn {
   color: white;
   font-weight: bold;
   cursor: pointer;
-  transition: 0.3s;
-  box-shadow: 0 0 10px red;
+  transition: 0.3s;  
 }
 
 /* MENU */
 
 /* NAVBAR */
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
   background-color: #111;
   padding: 10px 20px;
   font-family: var(--primaryFont);
@@ -181,14 +241,14 @@ h1 {
 @media (max-width: 768px) {
   .nav-links {
     position: absolute;
-    top: 60px;
-    right: -7px;
+    top: 46px;
+    right: 0px;
     background-color: #222;
     flex-direction: column;
     width: 100%;
     display: none;
     border-radius: 0 0 10px 10px;
-    padding: 10px;
+    padding: 20px 10px;
     /* box-shadow: 0 8px 10px black; */
   }
 
@@ -197,7 +257,7 @@ h1 {
   }
 
   .menu-icon {
-    display: block;
+    display: block;    
   }
 }
 
@@ -246,6 +306,9 @@ h1 {
 
 .power-level {
     display: flex;
-    flex-direction: column;
+    flex-direction: column;   
+    justify-content: center;
     gap: 2rem;
 }
+
+

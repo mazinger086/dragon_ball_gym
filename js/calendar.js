@@ -5,24 +5,29 @@ function generarCalendario() {
   const hoy = new Date();
   const año = hoy.getFullYear();
   const mes = hoy.getMonth();
+  const meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio',
+               'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+  document.getElementById('mes-actual').textContent = `${meses[mes]} ${año}`;
 
-  const primerDia = new Date(año, mes, 1).getDay(); // Día de la semana
+  const primerDia = new Date(año, mes, 1).getDay(); // 0: domingo
   const diasEnMes = new Date(año, mes + 1, 0).getDate();
 
-  // Espacios vacíos antes del 1º
+  const diasSemana = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'];
+
   for (let i = 0; i < primerDia; i++) {
     const celda = document.createElement('div');
     celda.className = 'day empty';
-    celda.textContent = '';
     contenedor.appendChild(celda);
   }
 
   for (let dia = 1; dia <= diasEnMes; dia++) {
-    const fechaActual = new Date(año, mes, dia).toISOString().split('T')[0];
-    const entrada = historial.find(e => e.fecha === fechaActual);
+    const fecha = new Date(año, mes, dia);
+    const fechaISO = fecha.toISOString().split('T')[0];
+    const entrada = historial.find(e => e.fecha === fechaISO);
 
     const celda = document.createElement('div');
     celda.classList.add('day');
+    celda.textContent = dia;
 
     if (entrada) {
       celda.classList.add(entrada.completado ? 'complete' : 'incomplete');
@@ -30,7 +35,46 @@ function generarCalendario() {
       celda.classList.add('empty');
     }
 
-    celda.textContent = dia;
+    celda.addEventListener('click', () => {
+      const nombreDia = diasSemana[fecha.getDay()]; // ej: 'lunes'
+      const csv = localStorage.getItem('rutina_csv');
+
+      if (!csv) {
+        Swal.fire({
+          title: '¡Oops!',
+          text: 'No hay ninguna rutina guardada.',
+          icon: 'error',
+          confirmButtonText: 'Aceptar'
+        });
+        return;
+      }
+
+      // Filtramos líneas que empiezan con el día
+      const lineas = csv.split('\n').filter(linea => {
+        return linea.toLowerCase().startsWith(nombreDia.toLowerCase() + ',');
+      });
+
+      if (lineas.length === 0) {
+        Swal.fire({
+          title: `No hay rutina para el día ${nombreDia.toUpperCase()}`,
+          icon: 'info',
+          confirmButtonText: 'Aceptar'
+        });
+      } else {
+        const ejercicios = lineas.map(linea => {
+          const [_, ejercicio, series, repeticiones, peso] = linea.split(',');
+          return `• ${ejercicio} — ${series}x${repeticiones} — ${peso}`;
+        }).join('<br>');
+
+        Swal.fire({
+          title: `Rutina para el ${nombreDia.toUpperCase()}`,
+          html: `<div style="font-size: 16px;">${ejercicios}</div>`,
+          icon: 'success',
+          confirmButtonText: '¡Perfecto!'
+        });
+      }
+    });
+
     contenedor.appendChild(celda);
   }
 }
